@@ -1,18 +1,13 @@
+
 import React from "react";
-import { links } from "./links";
-import Link from "next/link";
+import { navItems } from "./links";
+import { FloatingNav } from "../ui/floating-navbar";
 const Navbar = () => {
   return (
-    <nav className="flex justify-around items-center">
+    <nav className="flex justify-around items-center my-8">
       <h2>5am.</h2>
       <div className="flex justify-around items-center gap-4">
-        {links.map((link, key) => {
-          return (
-            <div key={link.id && key}>
-              <Link href={link.url && "/"}><span className="text-green-500">#</span>{link.name}</Link>
-            </div>
-          );
-        })}
+        <FloatingNav navItems={navItems}/>
       </div>
     </nav>
   );

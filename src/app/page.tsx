@@ -1,3 +1,4 @@
+"use client"
 import Contact from "@/components/Contact/Contact";
 import Hero from "@/components/Hero/Hero";
 import Navbar from "@/components/Navbar/Navbar";
@@ -8,8 +9,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div>
-      <BackgroundBeams />
-
+      <BackgroundBeams/>
       <Navbar />
       <div className="flex flex-col items-center">
         <Hero />
