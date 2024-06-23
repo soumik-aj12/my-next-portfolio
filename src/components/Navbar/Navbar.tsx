@@ -9,7 +9,7 @@ const Navbar = () => {
         {links.map((link, key) => {
           return (
             <div key={link.id && key}>
-              <Link href={link.url && "/"}>#{link.name}</Link>
+              <Link href={link.url && "/"}><span className="text-green-500">#</span>{link.name}</Link>
             </div>
           );
         })}
