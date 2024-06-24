@@ -12,7 +12,7 @@ const Skills = () => {
     "MongoDB",
   ];
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col h-[80vh]">
       <div className="text-4xl">about me</div>
       <div>
         
