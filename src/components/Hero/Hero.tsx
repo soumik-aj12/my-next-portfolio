@@ -44,7 +44,7 @@ const Hero = () => {
     "figma",
   ];
   return (
-    <div className="h-[80vh] w-[80vw] flex flex-col items-center justify-normal">
+    <div className="h-[100vh] w-[80vw] flex flex-col items-center justify-normal">
       <TypewriterEffectSmooth words={words} className="mb-10" />
       <div className="w-[90vw] lg:h-[50vh] flex flex-col lg:flex-row lg:justify-evenly items-center justify-center md:mt-5">
         <div className="text-2xl lg:text-6xl">
