@@ -3,7 +3,7 @@ import Contact from "@/components/Contact/Contact";
 import Hero from "@/components/Hero/Hero";
 import Navbar from "@/components/Navbar/Navbar";
 import Projects from "@/components/Projects/Projects";
-import Skills from "@/components/Skills/Skills";
+import About from "@/components/About/About";
 import RetroGrid from "@/components/ui/retro-grid";
 import { TracingBeam } from "@/components/ui/tracing-beam";
 export default function Home() {
@@ -13,7 +13,7 @@ export default function Home() {
       <RetroGrid />
       <div className="flex flex-col items-center">
         <Hero />
-        <Skills />
+        <About />
         <Projects />
         <Contact />
       </div>
