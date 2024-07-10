@@ -26,7 +26,7 @@ const Skills = () => {
   ];
 
   return (
-    <div className="bg-[#090909] flex flex-col lg:h-[90vh] w-[100%] items-center justify-around">
+    <div className="flex flex-col lg:h-[90vh] w-[100%] items-center justify-around">
       <RetroGrid />
       <div className="relative lg:w-[70%] flex flex-col lg:flex-row lg:items-center lg:justify-around">
         <div>
