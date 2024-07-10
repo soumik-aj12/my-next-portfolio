@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import { Dock, DockIcon } from "../ui/dock";
 import {
