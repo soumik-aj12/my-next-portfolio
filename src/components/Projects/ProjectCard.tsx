@@ -1,73 +1,27 @@
-import Image from "next/image";
-import { FollowerPointerCard } from "../ui/following-pointer";
+"use client";
 import Link from "next/link";
-export function ProjectCard({project}:any) {
+import { MagicCard } from "../ui/magic-card2";
+import { Button } from "../ui/button";
+export function ProjectCard({ project }: any) {
   return (
-    <div className="w-80 mx-auto flex">
-      <FollowerPointerCard
-        title={
-          <TitleComponent
-            title={blogContent.author}
-            avatar={blogContent.authorAvatar}
-          />
-        }
-      >
-        <div className="relative overflow-hidden h-full rounded-2xl transition duration-200 group bg-white hover:shadow-xl border border-zinc-100">
-          <div className="w-full aspect-w-16 aspect-h-10 bg-gray-100 rounded-tr-lg rounded-tl-lg overflow-hidden xl:aspect-w-16 xl:aspect-h-10 relative">
-            <Image
-              src={blogContent.image}
-              alt="thumbnail"
-              layout="fill"
-              objectFit="cover"
-              className={`group-hover:scale-95 group-hover:rounded-2xl transform object-cover transition duration-200 `}
-            />
-          </div>
-          <div className=" p-4">
-            <h2 className="font-bold my-4 text-lg text-zinc-700">
-              {project.name}
-            </h2>
-            <h2 className="font-normal my-4 text-sm text-zinc-500">
-              {project.description}
-            </h2>
-            <div className="flex flex-row justify-between items-center mt-10">
-              <Link href={project.github && "/"}>Github</Link>
-              <div className="relative z-10 px-6 py-2 bg-black text-white font-bold rounded-xl block text-xs">
-                Read More
+    <MagicCard className="">
+      <div className="flex flex-col items-center justify-between p-8">
+        <div className="mb-4 text-sm text-center lg:text-2xl">{project.name}</div>
+        <div className="text-justify text-sm">{project.description}</div>
+        <div className="flex flex-row">
+          {project.technology.map((tech:String,index:any)=>{
+            return (
+              <div key={index} className="p-2 w-full">
+                {tech}
               </div>
-            </div>
-          </div>
+            )
+          })}
         </div>
-      </FollowerPointerCard>
-    </div>
+        <div className="flex justify-between w-[100%]">
+          <div>Live</div>
+          <div><Link href={project.github}>Github</Link></div>
+        </div>
+      </div>
+    </MagicCard>
   );
 }
-
-const blogContent = {
-  slug: "amazing-tailwindcss-grid-layouts",
-  author: "Manu Arora",
-  date: "28th March, 2023",
-  title: "Amazing Tailwindcss Grid Layout Examples",
-  description:
-    "Grids are cool, but Tailwindcss grids are cooler. In this article, we will learn how to create amazing Grid layouts with Tailwindcs grid and React.",
-  image: "/demo/thumbnail.png",
-  authorAvatar: "/manu.png",
-};
-
-const TitleComponent = ({
-  title,
-  avatar,
-}: {
-  title: string;
-  avatar: string;
-}) => (
-  <div className="flex space-x-2 items-center">
-    <Image
-      src={avatar}
-      height="20"
-      width="20"
-      alt="thumbnail"
-      className="rounded-full border-2 border-white"
-    />
-    <p>{title}</p>
-  </div>
-);
