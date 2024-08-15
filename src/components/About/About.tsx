@@ -9,20 +9,20 @@ import {
   FaPython,
   FaReact,
 } from "react-icons/fa";
-import { Button } from "../ui/button";
-import { MagicCard } from "../ui/magic-card";
+
 import RetroGrid from "../ui/retro-grid";
 import Roadmap from "./Roadmap";
+import { SiMongodb } from "react-icons/si";
 const Skills = () => {
   const skills = [
-    { name: "Java", Icon: <FaJava /> },
-    { name: "Python", Icon: <FaPython /> },
-    { name: "HTML", Icon: <FaHtml5 /> },
-    { name: "CSS", Icon: <FaCss3 /> },
-    { name: "JS", Icon: <FaJs /> },
-    { name: "React", Icon: <FaReact /> },
-    { name: "NodeJS", Icon: <FaNodeJs /> },
-    { name: "MongoDB", Icon: <FaDatabase /> },
+    { name: "Java", Icon: <FaJava />, color: "text-blue-600", bgColor:"bg-orange-300" },
+    { name: "Python", Icon: <FaPython />, color: "text-[#f7cf47]", bgColor:"bg-[#366d9c]"  },
+    { name: "HTML", Icon: <FaHtml5 />, color: "orange", bgColor:"bg-orange-300"  },
+    { name: "CSS", Icon: <FaCss3 />, color: "orange", bgColor:"bg-orange-300"  },
+    { name: "JS", Icon: <FaJs />, color: "orange", bgColor:"bg-orange-300"  },
+    { name: "React", Icon: <FaReact />, color: "text-[#36c0da]", bgColor:"bg-white"  },
+    { name: "NodeJS", Icon: <FaNodeJs />, color: "text-green-400", bgColor:"bg-gray-700"  },
+    { name: "MongoDB", Icon: <SiMongodb />, color: "text-green-600", bgColor:"bg-white"  },
   ];
 
   return (
@@ -56,9 +56,9 @@ const Skills = () => {
               {skills.map((skill, key) => {
                 return (
                   <div key={key} className="p-2">
-                    <Button className="w-[7rem]">
+                    <button className={`w-[7rem] ${skill.bgColor} ${skill.color}`}>
                       {skill.name} {skill.Icon}
-                    </Button>
+                    </button>
                   </div>
                 );
               })}

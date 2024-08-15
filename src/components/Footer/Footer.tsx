@@ -36,37 +36,7 @@ const DATA = {
       label: "Projects",
     },
   ],
-  contact: [
-
-      {
-        name: "GitHub",
-        url: "https://github.com/soumik-aj12",
-        icon: <IconBrandGithub className="h-4 w-4 text-neutral-500 dark:text-white" />,
-
-        navbar: true,
-      },
-      {
-        name: "LinkedIn",
-        url: "www.linkedin.com/in/soumiksil",
-        icon: <IconBrandLinkedin className="h-4 w-4 text-neutral-500 dark:text-white" />,
-
-        navbar: true,
-      },
-     {
-        name: "Youtube",
-        url: "https://youtube.com/@5amboiii?si=DzkppDAeOQ414KQc",
-        icon: <IconBrandYoutube className="h-4 w-4 text-neutral-500 dark:text-white" />,
-        navbar: true,
-      },
-     {
-        name: "Send Email",
-        url: "#",
-        icon: <IconRecordMail className="h-4 w-4 text-neutral-500 dark:text-white" />,
-
-        navbar: false,
-      },
-
-    ],
+  
 };
 
 const Footer = () => {
@@ -94,30 +64,7 @@ const Footer = () => {
                 </Tooltip>
               </DockIcon>
           );
-        })}
-        <Separator orientation="vertical" className="h-full" />
-        {DATA.contact.map((con, index)=>{
-          return (
-            <DockIcon key={index}>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Link
-                      href={con.url}
-                      className={cn(
-                        buttonVariants({ variant: "ghost", size: "icon" }),
-                        "size-12"
-                      )}
-                    >
-                      {con.icon}
-                    </Link>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>{con.name}</p>
-                  </TooltipContent>
-                </Tooltip>
-              </DockIcon>
-          )
-        })}
+        })}        
       </Dock>
     </div>
   );
