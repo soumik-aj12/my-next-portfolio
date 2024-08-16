@@ -1,34 +1,17 @@
 import React from "react";
-import {
-  FaCss3,
-  FaDatabase,
-  FaHtml5,
-  FaJava,
-  FaJs,
-  FaNodeJs,
-  FaPython,
-  FaReact,
-} from "react-icons/fa";
-
 import RetroGrid from "../ui/retro-grid";
 import Roadmap from "./Roadmap";
 import { SiMongodb } from "react-icons/si";
+import { AnimatePresence } from "framer-motion";
+import { skills } from "./skill";
+import Image from "next/image";
 const Skills = () => {
-  const skills = [
-    { name: "Java", Icon: <FaJava />, color: "text-blue-600", bgColor:"bg-orange-300" },
-    { name: "Python", Icon: <FaPython />, color: "text-[#f7cf47]", bgColor:"bg-[#366d9c]"  },
-    { name: "HTML", Icon: <FaHtml5 />, color: "orange", bgColor:"bg-orange-300"  },
-    { name: "CSS", Icon: <FaCss3 />, color: "orange", bgColor:"bg-orange-300"  },
-    { name: "JS", Icon: <FaJs />, color: "orange", bgColor:"bg-orange-300"  },
-    { name: "React", Icon: <FaReact />, color: "text-[#36c0da]", bgColor:"bg-white"  },
-    { name: "NodeJS", Icon: <FaNodeJs />, color: "text-green-400", bgColor:"bg-gray-700"  },
-    { name: "MongoDB", Icon: <SiMongodb />, color: "text-green-600", bgColor:"bg-white"  },
-  ];
-
   return (
-    <div className="flex flex-col lg:h-[90vh] w-[100%] items-center justify-around">
-      <RetroGrid />
-      <div className="relative lg:w-[70%] flex flex-col lg:flex-row lg:items-center lg:justify-around">
+    <div
+      id="about"
+      className="flex flex-col md:h-[100vh] w-[100%] items-center justify-around"
+    >
+      <div className="relative lg:w-[80%] flex flex-col lg:flex-row lg:items-center lg:justify-around">
         <div>
           <div className="flex flex-col items-center justify-center m-4">
             <div className="text-4xl text-green-500 lg:mb-6">education</div>
@@ -53,12 +36,22 @@ const Skills = () => {
           <div className="flex flex-col items-center justify-center">
             <div className="text-4xl text-green-500 lg:mb-6">skills</div>
             <div className="grid grid-flow-row grid-cols-2 lg:grid-cols-4">
-              {skills.map((skill, key) => {
+              {skills.map((skill: any, index: number) => {
                 return (
-                  <div key={key} className="p-2">
-                    <button className={`w-[7rem] ${skill.bgColor} ${skill.color}`}>
-                      {skill.name} {skill.Icon}
-                    </button>
+                  <div
+                    key={index}
+                    className="m-1 p-2 rounded-md border-solid border-white flex justify-center items-center"
+                  >
+                    <div className="mr-1">
+                      <Image
+                        src={skill.icon}
+                        alt={skill.name}
+                        height="28"
+                        width="28"
+                        className={skill.name === "Express"?`bg-white p-1 rounded-full`:""}
+                      />
+                    </div>
+                    <div>{skill.name}</div>
                   </div>
                 );
               })}

@@ -16,7 +16,7 @@
     "@tabler/icons-react": "^3.6.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
-    "framer-motion": "^11.2.11",
+    "framer-motion": "^11.3.28",
     "heroicons": "^2.1.4",
     "init": "^0.1.2",
     "lucide-react": "^0.396.0",
