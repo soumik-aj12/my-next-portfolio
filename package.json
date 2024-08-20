@@ -17,6 +17,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "framer-motion": "^11.3.28",
+    "gsap": "^3.12.5",
     "heroicons": "^2.1.4",
     "init": "^0.1.2",
     "lucide-react": "^0.396.0",

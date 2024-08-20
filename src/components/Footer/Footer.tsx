@@ -31,7 +31,7 @@ const navbar = [
     },
     {
       href: "#projects",
-      icon: <IconBox className="h-4 w-4 text-white" />,
+      icon: <IconBox className="h-6 w-6 text-white" />,
       title: "Projects",
     },
   ];

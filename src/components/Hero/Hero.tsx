@@ -49,7 +49,7 @@ const Hero = () => {
       <div className="w-[90vw] lg:h-[50vh] flex flex-col lg:flex-row lg:justify-evenly items-center justify-center md:mt-5">
         <div className="text-2xl lg:text-6xl">
           <div>
-            my name is <span className="text-green-500">soumik sil</span>.
+            my name is <span className="text-green-500"><span className="text-white">//</span>soumik sil<span className="text-white">//</span></span>.
           </div>
           <div className="text-base lg:text-lg">
             exploring the web through AI.
