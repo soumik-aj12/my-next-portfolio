@@ -47,7 +47,7 @@ const Hero = () => {
     <div className="lg:h-[100vh] w-[80vw] flex flex-col items-center justify-center">
       <div className="w-[90vw] lg:h-[50vh] flex flex-col lg:flex-row lg:justify-evenly items-center justify-center md:mt-5">
         <div className="lg:w-[40vw] m-2 text-center">
-          <div className="text-2xl lg:text-6xl text-green-600 font-bold mb-2">
+          <div className="text-2xl lg:text-5xl text-green-600 font-bold mb-2">
             WELCOME TARNISHED,<div>to the Abyss Of Coding.</div>
           </div>
           <div className="text-base lg:text-sm text-justify">

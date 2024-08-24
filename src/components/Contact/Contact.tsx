@@ -1,6 +1,7 @@
-import React, {useState} from "react"
+"use client";
+import React, { useState } from "react";
 
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -8,83 +9,106 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import {createClient} from "@supabase/supabase-js";
-import nodemailer from "nodemailer";
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { useToast } from "../ui/use-toast";
+import Loading from "@/loading";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({name: '', email: '', message: ''});
-  const handleChange = (e:any)=>{
+  const { toast } = useToast();
+  const [loading, setLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const handleChange = (e: any) => {
     setFormData({
-      ...formData, [e.target.id]: e.target.value
-    })
-  }
-
-  const handleSubmit = async (e:any)=>{
-    e.preventDefault();
-
-    const transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth:{
-        user: "",
-        pass: ""
-      }
+      ...formData,
+      [e.target.id]: e.target.value,
     });
-    const mailOptions = {
-      from: '',
-      to: '',
-      subject:'Feedback on Portfolio',
-      text: `Name: ${formData.name}\nEmail: ${formData.email}\nMessage: ${formData.message}`
-    };
-    transporter.sendMail(mailOptions, (error, info)=>{
-      if(error){
-        console.error(error);
+  };
+
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+    try {
+      setLoading(true);
+      const res = await fetch("/api/mail", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      if (res.ok) {
+        setLoading(false);
+        toast({
+          description: "Feedback Sent!",
+        });
+      } else {
+        setLoading(false);
+        toast({ description: "Failed to send feedback" });
       }
-      else{
-        console.log(`Email sent: ${info.response}`);
-        
-      }
-    })
+    } catch (e) {
+      console.log(e);
+    } finally {
+      setFormData({ name: "", email: "", message: "" });
+    }
   };
 
   return (
     <div className="flex flex-col md:h-[100vh] w-[85vw] md:w-[50vw] items-center justify-evenly">
+    {loading && <Loading/>}
       <div className="flex flex-col items-center justify-center">
         <div className="text-4xl text-green-500 lg:mb-6">contact</div>
         <div className="flex flex-col lg:flex-row gap-4 text-justify">
-        <Card className="w-[350px]">
-      <CardHeader>
-        {/* <CardTitle>Feedback</CardTitle> */}
-        {/* <CardDescription>Deploy your new project in one-click.</CardDescription> */}
-      </CardHeader>
-      <CardContent>
-        <form>
-          <div className="grid w-full items-center gap-4">
-            <div className="flex flex-col space-y-1.5">
-              <Label htmlFor="name">Name</Label>
-              <Input id="name" placeholder="john doe" />
-            </div>
-            <div className="flex flex-col space-y-1.5">
-              <Label htmlFor="email">Email</Label>
-              <Input id="email" placeholder="johndoe@mail.com" />
-            </div>
-            <div className="flex flex-col space-y-1.5">
-              <Label htmlFor="feedback">Message</Label>
-              <Input id="feedback" placeholder="your message" />
-            </div>
-          </div>
-        </form>
-      </CardContent>
-      <CardFooter className="flex justify-between">
-        <Button>Send</Button>
-      </CardFooter>
-    </Card>
+          <Card className="w-[350px]">
+            <CardHeader>
+              <CardTitle>Send a feedback</CardTitle>
+              {/* <CardDescription>Send a feedback.</CardDescription> */}
+            </CardHeader>
+            <CardContent>
+              <form>
+                <div className="grid w-full items-center gap-4">
+                  <div className="flex flex-col space-y-1.5">
+                    <Label htmlFor="name">Name</Label>
+                    <Input
+                      id="name"
+                      placeholder="john doe"
+                      value={formData.name}
+                      onChange={handleChange}
+                    />
+                  </div>
+                  <div className="flex flex-col space-y-1.5">
+                    <Label htmlFor="email">Email</Label>
+                    <Input
+                      id="email"
+                      placeholder="johndoe@mail.com"
+                      value={formData.email}
+                      onChange={handleChange}
+                    />
+                  </div>
+                  <div className="flex flex-col space-y-1.5">
+                    <Label htmlFor="message">Message</Label>
+                    <Input
+                      id="message"
+                      placeholder="your message"
+                      value={formData.message}
+                      onChange={handleChange}
+                    />
+                  </div>
+                </div>
+              </form>
+            </CardContent>
+            <CardFooter className="flex justify-between">
+              <Button onClick={handleSubmit}>{loading? "Sending":"Send"}</Button>
+            </CardFooter>
+          </Card>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;
