@@ -1,24 +1,10 @@
 "use client";
 import React from "react";
-import { TypewriterEffectSmooth } from "../ui/typewriter-effect";
 import IconCloud from "../ui/icon-cloud";
 
+import { Cover } from "../ui/cover";
+
 const Hero = () => {
-  const words = [
-    {
-      text: "welcome",
-    },
-    {
-      text: "to",
-    },
-    {
-      text: "my",
-    },
-    {
-      text: "world",
-      className: "text-green-500 dark:text-green-500",
-    },
-  ];
   const slugs = [
     "typescript",
     "javascript",
@@ -43,22 +29,15 @@ const Hero = () => {
     "androidstudio",
     "figma",
   ];
+
   return (
-    <div className="lg:h-[100vh] w-[80vw] flex flex-col items-center justify-center">
-      <div className="w-[90vw] lg:h-[50vh] flex flex-col lg:flex-row lg:justify-evenly items-center justify-center md:mt-5">
+    <div className="lg:h-[100vh] w-[80vw] mt-8 flex flex-col items-center justify-center">
+      <div className="lg:h-[50vh] flex flex-col lg:flex-row lg:justify-evenly items-center justify-center md:mt-5">
         <div className="lg:w-[40vw] m-2 text-center">
-          <div className="text-2xl lg:text-5xl text-green-600 font-bold mb-2">
-            WELCOME TARNISHED,<div>to the Abyss Of Coding.</div>
-          </div>
-          <div className="text-base lg:text-sm text-justify">
-            You stand at the dawn of your journey, where challenges of arcane
-            bugs and cryptic syntax await. Armed with fresh knowledge, embrace
-            the trials ahead—each error is a lesson, each line of code a step
-            toward mastery. Rise, young developer, and let your creations shine
-            in the vast expanse of the internet.{" "}
-          </div>
-          <div className="lg:mt-0 mt-[10px] font-bold">
-            Forge your legacy in this digital realm.
+          <div className="text-2xl lg:text-5xl font-bold mb-2">Hello there! I am <Cover className="text-green-600">Soumik</Cover></div>
+          <div className="text-2xl lg:text-4xl text-center font-bold text-green-600">FULL STACK DEVELOPER</div>
+          <div className="lg:mt-0 mt-[10px] italic">
+          Lead thy life as thou seest fit - Hawkeye Gough, Dark Souls
           </div>
         </div>
         <div className="h-15 w-15">

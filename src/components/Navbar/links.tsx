@@ -1,27 +1,33 @@
-import { IconHome, IconUser, IconMessage } from "@tabler/icons-react";
+import {
+  IconHome,
+  IconUser,
+  IconMessage,
+  IconPhoneCall,
+  IconBriefcase,
+} from "@tabler/icons-react";
 export const navItems = [
   {
-    name: "home",
-    link: "#hero",
+    title: "HOME",
+    href: "#hero",
     icon: <IconHome className="h-4 w-4 text-neutral-500 dark:text-white" />,
   },
   {
-    name: "about",
-    link: "#about",
+    title: "ABOUT",
+    href: "#about",
     icon: <IconUser className="h-4 w-4 text-neutral-500 dark:text-white" />,
   },
   {
-    name: "projects",
-    link: "#contact",
+    title: "PROJECTS",
+    href: "#projects",
     icon: (
-      <IconMessage className="h-4 w-4 text-neutral-500 dark:text-white" />
+      <IconBriefcase className="h-4 w-4 text-neutral-500 dark:text-white" />
     ),
   },
   {
-    name: "contact",
-    link: "#contact",
+    title: "CONTACT",
+    href: "#contact",
     icon: (
-      <IconMessage className="h-4 w-4 text-neutral-500 dark:text-white" />
+      <IconPhoneCall className="h-4 w-4 text-neutral-500 dark:text-white" />
     ),
   },
 ];

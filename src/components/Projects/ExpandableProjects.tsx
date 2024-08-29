@@ -4,11 +4,11 @@ import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "@/components/ui/use-outside-click";
 import { ProjectsList } from "@/data/data";
-import img from "@../../../public/pfp.jpg"
+import img from "@../../../public/pfp.jpg";
 export default function ExpandableProjects() {
-  const [active, setActive] = useState<(typeof ProjectsList)[number] | boolean | null>(
-    null
-  );
+  const [active, setActive] = useState<
+    (typeof ProjectsList)[number] | boolean | null
+  >(null);
   const id = useId();
   const ref = useRef<HTMLDivElement>(null);
 
@@ -74,11 +74,13 @@ export default function ExpandableProjects() {
               <motion.div layoutId={`image-${active.title}-${id}`}>
                 <Image
                   priority
-                  width={200}
-                  height={200}
-                  src={img}
+                  width={500} // Adjust based on your layout
+                  height={500} // Adjust based on your layout
+                  quality={100} // Set to 100 for best quality
+                  src={active.image}
                   alt={active.title}
-                  className="w-full h-80 lg:h-80 sm:rounded-tr-lg sm:rounded-tl-lg object-cover object-top"
+                  className="w-full h-full sm:rounded-tr-lg sm:rounded-tl-lg object-cover object-top"
+                  
                 />
               </motion.div>
 
@@ -92,13 +94,18 @@ export default function ExpandableProjects() {
                       {active.title}
                     </motion.h3>
                     <motion.div
-                      layoutId={`description-${active.description}-${id}`}
-                      className="text-white dark:text-neutral-400 text-base flex"
-                    >              
-                      {active.technology.map((tech,index)=>{
+                      layoutId={`description-${active.title}-${id}`}
+                      className="text-base flex"
+                    >
+                      {active.technology.map((tech, index) => {
                         return (
-                          <Image key={index} src={tech} alt={active.title} className="h-6 w-6"/>
-                        )
+                          <Image
+                            key={index}
+                            src={tech}
+                            alt={active.title}
+                            className={"h-8 w-8 m-2"}
+                          />
+                        );
                       })}
                     </motion.div>
                   </div>
@@ -142,9 +149,10 @@ export default function ExpandableProjects() {
             <div className="flex gap-4 flex-col  w-full">
               <motion.div layoutId={`image-${card.title}-${id}`}>
                 <Image
-                  width={100}
-                  height={100}
-                  src={img}
+                  width={500}
+                  height={500}
+                  quality={100}
+                  src={card.image}
                   alt={card.title}
                   className="h-60 w-full  rounded-lg object-cover object-top"
                 />
@@ -152,19 +160,24 @@ export default function ExpandableProjects() {
               <div className="flex justify-center items-center flex-col">
                 <motion.h3
                   layoutId={`title-${card.title}-${id}`}
-                  className="font-medium text-neutral-800 dark:text-neutral-200 text-center md:text-left text-base"
+                  className="font-medium text-white text-center md:text-left text-base"
                 >
                   {card.title}
                 </motion.h3>
                 <motion.p
                   layoutId={`description-${card.description}-${id}`}
-                  className="text-neutral-600 dark:text-neutral-400 text-center md:text-left text-base flex"
+                  className="text-white text-center md:text-left text-base flex "
                 >
-                  {card.technology.map((tech:any,index:any)=>{
-                        return (
-                          <Image key={index} src={tech} alt={card.title} className="h-8 w-8 m-1"/>
-                        )
-                      })}
+                  {card.technology.map((tech: any, index: any) => {
+                    return (
+                      <Image
+                        key={index}
+                        src={tech}
+                        alt={card.title}
+                        className={`h-8 w-8 p-1`}
+                      />
+                    );
+                  })}
                 </motion.p>
               </div>
             </div>
@@ -207,97 +220,3 @@ export const CloseIcon = () => {
     </motion.svg>
   );
 };
-
-const cards = [
-  {
-    description: "Lana Del Rey",
-    title: "Summertime Sadness",
-    src: "https://assets.aceternity.com/demos/lana-del-rey.jpeg",
-    ctaText: "Visit",
-    ctaLink: "https://ui.aceternity.com/templates",
-    content: () => {
-      return (
-        <p>
-          Lana Del Rey, an iconic American singer-songwriter, is celebrated for
-          her melancholic and cinematic music style. Born Elizabeth Woolridge
-          Grant in New York City, she has captivated audiences worldwide with
-          her haunting voice and introspective lyrics. <br /> <br /> Her songs
-          often explore themes of tragic romance, glamour, and melancholia,
-          drawing inspiration from both contemporary and vintage pop culture.
-          With a career that has seen numerous critically acclaimed albums, Lana
-          Del Rey has established herself as a unique and influential figure in
-          the music industry, earning a dedicated fan base and numerous
-          accolades.
-        </p>
-      );
-    },
-  },
-  {
-    description: "Babbu Maan",
-    title: "Mitran Di Chhatri",
-    src: "https://assets.aceternity.com/demos/babbu-maan.jpeg",
-    ctaText: "Visit",
-    ctaLink: "https://ui.aceternity.com/templates",
-    content: () => {
-      return (
-        <p>
-          Babu Maan, a legendary Punjabi singer, is renowned for his soulful
-          voice and profound lyrics that resonate deeply with his audience. Born
-          in the village of Khant Maanpur in Punjab, India, he has become a
-          cultural icon in the Punjabi music industry. <br /> <br /> His songs
-          often reflect the struggles and triumphs of everyday life, capturing
-          the essence of Punjabi culture and traditions. With a career spanning
-          over two decades, Babu Maan has released numerous hit albums and
-          singles that have garnered him a massive fan following both in India
-          and abroad.
-        </p>
-      );
-    },
-  },
-
-  {
-    description: "Metallica",
-    title: "For Whom The Bell Tolls",
-    src: "https://assets.aceternity.com/demos/metallica.jpeg",
-    ctaText: "Visit",
-    ctaLink: "https://ui.aceternity.com/templates",
-    content: () => {
-      return (
-        <p>
-          Metallica, an iconic American heavy metal band, is renowned for their
-          powerful sound and intense performances that resonate deeply with
-          their audience. Formed in Los Angeles, California, they have become a
-          cultural icon in the heavy metal music industry. <br /> <br /> Their
-          songs often reflect themes of aggression, social issues, and personal
-          struggles, capturing the essence of the heavy metal genre. With a
-          career spanning over four decades, Metallica has released numerous hit
-          albums and singles that have garnered them a massive fan following
-          both in the United States and abroad.
-        </p>
-      );
-    },
-  },
-  {
-    description: "Lord Himesh",
-    title: "Aap Ka Suroor",
-    src: "https://assets.aceternity.com/demos/aap-ka-suroor.jpeg",
-    ctaText: "Visit",
-    ctaLink: "https://ui.aceternity.com/templates",
-    content: () => {
-      return (
-        <p>
-          Himesh Reshammiya, a renowned Indian music composer, singer, and
-          actor, is celebrated for his distinctive voice and innovative
-          compositions. Born in Mumbai, India, he has become a prominent figure
-          in the Bollywood music industry. <br /> <br /> His songs often feature
-          a blend of contemporary and traditional Indian music, capturing the
-          essence of modern Bollywood soundtracks. With a career spanning over
-          two decades, Himesh Reshammiya has released numerous hit albums and
-          singles that have garnered him a massive fan following both in India
-          and abroad.
-        </p>
-      );
-    },
-  },
-];
-

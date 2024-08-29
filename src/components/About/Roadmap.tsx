@@ -36,7 +36,14 @@ const Education = [
   },
 ];
 
+import { useInView } from "react-intersection-observer";
+
 const Roadmap = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: false,
+    threshold: 0.1,
+  });
+
   return (
     <div className="container mx-auto p-6 relative">
       <div className="relative">
@@ -47,9 +54,10 @@ const Roadmap = () => {
           {Education.map((E, index) => (
             <motion.div
               key={index}
+              ref={ref}
               initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.5 }}
+              animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
               className={`mb-8 shadow-lg rounded-lg max-w-xs mx-auto ${
                 index % 2 === 0 ? "mr-auto" : "ml-auto"
               }`}
