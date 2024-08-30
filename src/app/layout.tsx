@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Rubik } from "next/font/google";
+import { Handjet, Pixelify_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/toaster";
 
-const rubik = Rubik({ subsets: ["latin"] });
+const pixel = Pixelify_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "5oumik",
@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={rubik.className}>
+      <body className={pixel.className}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

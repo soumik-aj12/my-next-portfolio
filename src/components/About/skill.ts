@@ -1,12 +1,3 @@
-import {
-  SiExpress,
-  SiSocketdotio,
-  SiPrisma,
-  SiNextdotjs,
-  SiFlask,
-} from "react-icons/si";
-
-
 // Languages
 import HtmlSvg from "../../../public/icons/html.svg";
 import CsssSvg from "../../../public/icons/css.svg";
@@ -27,13 +18,7 @@ import ExpressSvg from "../../../public/icons/express.svg";
 
 // Database and ORMS
 import MongoDBSvg from "../../../public/icons/mongodb.svg";
-import PostgressSvg from "../../../public/icons/postgresql.svg";
-
-// Tools and Tech
-import GitSvg from "../../../public/icons/git.svg";
-import DockerSvg from "../../../public/icons/docker.svg";
-import AwsSvg from "../../../public/icons/aws.svg";
-import PostmanSvg from "../../../public/icons/postman.svg";
+// import PostgressSvg from "../../../public/icons/postgresql.svg";
 
 export const  skills = [
       {

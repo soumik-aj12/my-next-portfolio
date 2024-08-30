@@ -31,12 +31,12 @@ const Hero = () => {
   ];
 
   return (
-    <div className="lg:h-[100vh] w-[80vw] mt-8 flex flex-col items-center justify-center">
+    <div className="lg:h-[100vh] w-[80vw] mt-8 lg:my-0 flex flex-col items-center justify-center">
       <div className="lg:h-[50vh] flex flex-col lg:flex-row lg:justify-evenly items-center justify-center md:mt-5">
         <div className="lg:w-[40vw] m-2 text-center">
           <div className="text-2xl lg:text-5xl font-bold mb-2">Hello there! I am <Cover className="text-green-600">Soumik</Cover></div>
           <div className="text-2xl lg:text-4xl text-center font-bold text-green-600">FULL STACK DEVELOPER</div>
-          <div className="lg:mt-0 mt-[10px] italic">
+          <div className="lg:mt-0 mt-[10px] font-serif italic">
           Lead thy life as thou seest fit - Hawkeye Gough, Dark Souls
           </div>
         </div>

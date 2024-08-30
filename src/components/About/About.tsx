@@ -47,8 +47,7 @@ const Skills = () => {
         <div>
           <div className="flex flex-col items-center justify-center m-4">
             <div className="text-4xl text-green-500 lg:mb-6">
-              <span className="text-white">//</span>education
-              <span className="text-white">//</span>
+              <span className="text-white">#</span>education
             </div>
             <div className="flex flex-col lg:flex-row">
               <Roadmap/>
@@ -60,8 +59,7 @@ const Skills = () => {
         >
           <div className="flex flex-col items-center w-[80vw] lg:w-[30vw]">
             <div className="text-4xl text-green-500 lg:mb-6">
-              <span className="text-white">//</span>about me
-              <span className="text-white">//</span>
+              <span className="text-white">#</span>about me
             </div>
             <div className="text-justify">
               Hey! My name is Soumik Sil. I am a Computer Science graduate with
@@ -74,8 +72,7 @@ const Skills = () => {
           </div>
           <div className="flex flex-col items-center justify-center">
             <div className="text-4xl text-green-500 mt-6 lg:mb-6">
-              <span className="text-white">//</span>skills
-              <span className="text-white">//</span>
+              <span className="text-white">#</span>skills
             </div>
             <div className="grid grid-flow-row grid-cols-2 lg:grid-cols-4">
               {skills.map((skill: any, index: number) => {

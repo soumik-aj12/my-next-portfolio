@@ -6,7 +6,7 @@ const Projects = () => {
   return (
     <div id="projects" className="flex flex-col w-[85vw] md:w-[50vw] items-center justify-evenly">
       <div className="flex flex-col items-center justify-center">
-        <div className="text-4xl text-green-500 lg:mb-6">projects</div>
+        <div className="text-4xl text-green-500 lg:mb-6"><span className="text-white">#</span>projects</div>
         <div className="flex flex-col lg:flex-row gap-4 text-justify">
           <ExpandableProjects />
         </div>

@@ -1,30 +1,11 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { FloatingDock } from "../ui/dock";
-
 import Link from "next/link";
 
 import { Separator } from "../ui/seperator";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
 export type IconProps = React.HTMLAttributes<SVGElement>;
-// const navbar = [
-//   {
-//     href: "#hero",
-//     icon: <IconHome className="h-4 w-4 text-white" />,
-//     title: "Home",
-//   },
-//   {
-//     href: "#about",
-//     icon: <IconUser className="h-4 w-4 text-white" />,
-//     title: "About",
-//   },
-//   {
-//     href: "#projects",
-//     icon: <IconBox className="h-6 w-6 text-white" />,
-//     title: "Projects",
-//   },
-// ];
 
 import { FaDiscord, FaGithub, FaLinkedin } from "react-icons/fa";
 const Footer = () => {
@@ -41,7 +22,7 @@ const Footer = () => {
     }
   }, [copy]);
   return (
-    <div className="my-4 h-[10vh] w-[60vw]">
+    <div className="my-4 h-[10vh] w-[70vw]">
       <Separator className=" bg-white" />
       <div className="flex flex-col lg:flex-row items-center lg:justify-between mt-4">
         <div className="flex gap-4">

@@ -13,7 +13,7 @@ const Sidebar: React.FC = () => {
   const [textWidths, setTextWidths] = useState<number[]>([]);
   const textRefs: TextRefType[] = useRef([]).current;
 
-  const isMobileOrTablet = useMediaQuery('(max-width: 1024px)'); // Adjust breakpoint as needed
+  const isMobileOrTablet = useMediaQuery('(max-width: 1024px)'); 
 
   const sidebarVariants = {
     hover: { width: '240px' },
@@ -52,7 +52,7 @@ const Sidebar: React.FC = () => {
                   <div className="py-2 pr-4 flex items-center h-8">
                     <motion.div
                       className="h-0.5 bg-white absolute"
-                      initial={{ width: '20px' }}
+                      initial={{ width: '10px', height: '10px' }}
                       animate={{
                         width: hoveredItem === index ? '0px' : '20px',
                       }}
@@ -60,7 +60,7 @@ const Sidebar: React.FC = () => {
                     />
                     <motion.div
                       ref={textRefs[index]}
-                      className="absolute left-4 text-lg whitespace-nowrap"
+                      className="absolute left-4 text-4xl whitespace-nowrap"
                       initial={{ opacity: 0 }}
                       animate={{
                         opacity: hoveredItem === index ? 1 : 0,
@@ -68,12 +68,12 @@ const Sidebar: React.FC = () => {
                       transition={{ duration: 0.2 }}
                     >
                       <Link href={item.href}>
-                        #<span className="text-green-700 font-bold">{item.title}</span>
+                        <span className='text-green-600'>#</span><span className="text-white font-bold">{item.title}</span>
                       </Link>
                     </motion.div>
                   </div>
                   <motion.div
-                    className="absolute bottom-0 left-4 h-0.5 bg-white"
+                    className="absolute bottom-0 left-4 h-[0.5px] bg-white"
                     initial={{ width: 0 }}
                     animate={{
                       width: hoveredItem === index ? `${textWidths[index]}px` : 0,

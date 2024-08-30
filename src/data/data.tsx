@@ -22,6 +22,7 @@ import NextjsSvg from "../../public/icons/next.svg";
 
 import det from "../../public/projects/det.png";
 import helpify from "../../public/projects/helpify.png";
+import recipedia from "../../public/projects/recipedia.jpg";
 import port from "../../public/projects/port.png";
 
 export const ProjectsList = [
@@ -40,7 +41,7 @@ export const ProjectsList = [
     description:
       "a comprehensive tool for organizing and managing your favorite recipes. Easily add, categorize, and search for recipes, create shopping lists, and plan meals to make cooking at home more enjoyable and efficient.",
     technology: [ReactjsSvg, TailwindSvg, NodejsSvg, ExpressSvg, MongoDBSvg],
-    image: det,
+    image: recipedia,
     github: "https://github.com/soumik-aj12/recipedia",
   },
   {

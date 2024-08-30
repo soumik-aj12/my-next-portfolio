@@ -74,9 +74,9 @@ export default function ExpandableProjects() {
               <motion.div layoutId={`image-${active.title}-${id}`}>
                 <Image
                   priority
-                  width={500} // Adjust based on your layout
-                  height={500} // Adjust based on your layout
-                  quality={100} // Set to 100 for best quality
+                  width={500}
+                  height={500}
+                  quality={100}
                   src={active.image}
                   alt={active.title}
                   className="w-full h-full sm:rounded-tr-lg sm:rounded-tl-lg object-cover object-top"
@@ -89,7 +89,7 @@ export default function ExpandableProjects() {
                   <div className="">
                     <motion.h3
                       layoutId={`title-${active.title}-${id}`}
-                      className="font-medium text-neutral-700 dark:text-neutral-200 text-base"
+                      className="font-medium text-xl text-white"
                     >
                       {active.title}
                     </motion.h3>
@@ -160,7 +160,7 @@ export default function ExpandableProjects() {
               <div className="flex justify-center items-center flex-col">
                 <motion.h3
                   layoutId={`title-${card.title}-${id}`}
-                  className="font-medium text-white text-center md:text-left text-base"
+                  className="font-medium text-white text-center md:text-left text-xl"
                 >
                   {card.title}
                 </motion.h3>

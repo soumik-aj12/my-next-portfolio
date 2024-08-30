@@ -16,7 +16,6 @@
     "@radix-ui/react-toast": "^1.2.1",
     "@react-three/drei": "^9.107.0",
     "@react-three/fiber": "^8.16.8",
-    "@supabase/supabase-js": "^2.45.2",
     "@tabler/icons-react": "^3.6.0",
     "@tsparticles/engine": "^3.5.0",
     "@tsparticles/react": "^3.0.0",
@@ -24,7 +23,6 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "framer-motion": "^11.3.28",
-    "gsap": "^3.12.5",
     "heroicons": "^2.1.4",
     "init": "^0.1.2",
     "lucide-react": "^0.396.0",
@@ -43,9 +41,7 @@
     "react-timeline-animation": "^1.2.3",
     "shadcn-ui": "^0.2.3",
     "tailwind-merge": "^2.3.0",
-    "tailwindcss-animate": "^1.0.7",
-    "three": "^0.165.0",
-    "three-globe": "^2.31.1"
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@types/node": "^20",
