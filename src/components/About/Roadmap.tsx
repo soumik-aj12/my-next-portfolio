@@ -3,20 +3,12 @@ import { MagicCard } from "../ui/magic-card";
 
 const Education = [
   {
-    name: "Bidya Bhaban",
-    Year: "2005-2017",
+    name: "Heritage Institute of Technology",
+    Year: "2022-2024",
+    DGPA: "8.76",
     CGPA: "",
-    DGPA: "",
-    Percentage: "70.71%",
-    Board: "WBSSE",
-  },
-  {
-    name: "Behala High School",
-    Year: "2017-2019",
-    Percentage: "66.83%",
-    CGPA: "",
-    DGPA: "",
-    Board: "WBCHSE",
+    Percentage: "",
+    Board: "MAKAUT",
   },
   {
     name: "Behala College",
@@ -27,12 +19,20 @@ const Education = [
     Board: "University of Calcutta",
   },
   {
-    name: "Heritage Institute of Technology",
-    Year: "2022-2024",
-    DGPA: "8.76",
+    name: "Behala High School",
+    Year: "2017-2019",
+    Percentage: "66.83%",
     CGPA: "",
-    Percentage: "",
-    Board: "MAKAUT",
+    DGPA: "",
+    Board: "WBCHSE",
+  },
+  {
+    name: "Bidya Bhaban",
+    Year: "2005-2017",
+    CGPA: "",
+    DGPA: "",
+    Percentage: "70.71%",
+    Board: "WBSSE",
   },
 ];
 
@@ -56,14 +56,20 @@ const Roadmap = () => {
               key={index}
               ref={ref}
               initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
-              animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
+              animate={
+                inView
+                  ? { opacity: 1, x: 0 }
+                  : { opacity: 0, x: index % 2 === 0 ? -100 : 100 }
+              }
               transition={{ duration: 0.5, delay: index * 0.2 }}
               className={`mb-8 shadow-lg rounded-lg max-w-xs mx-auto ${
                 index % 2 === 0 ? "mr-auto" : "ml-auto"
               }`}
             >
               <MagicCard className="flex h-[5rem] w-[10rem] p-4 lg:p-[1rem] lg:h-full lg:w-full cursor-pointer flex-col items-center justify-center overflow-hidden shadow-2xl transition ease-in-out delay-150 hover:scale-105">
-                <div className="text-[10px] lg:text-xl text-center">{E.name}</div>
+                <div className="text-[10px] lg:text-xl text-center">
+                  {E.name}
+                </div>
                 <div className="text-[8px] lg:text-lg">{E.Board}</div>
                 <div className="text-[8px] lg:text-xs">Year: {E.Year}</div>
                 <div className="text-[8px] lg:text-xs text-zinc-400">
