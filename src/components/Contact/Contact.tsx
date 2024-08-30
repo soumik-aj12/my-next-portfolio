@@ -58,10 +58,13 @@ const Contact = () => {
   };
 
   return (
-    <div id="contact" className="flex flex-col w-[85vw] md:w-[50vw] items-center justify-evenly my-4">
-    {loading && <Loading/>}
+    <div
+      id="contact"
+      className="flex flex-col w-[85vw] md:w-[50vw] items-center justify-evenly my-4"
+    >
+      {loading && <Loading />}
       <div className="flex flex-col items-center justify-center">
-        <div className="text-4xl text-green-500 lg:mb-6"><span className="text-white">#</span>contact me</div>
+        <div className="text-4xl text-green-500 lg:mb-6">contact me</div>
         <div className="flex flex-col lg:flex-row gap-4 text-justify">
           <Card className="w-[350px]">
             <CardHeader>
@@ -102,7 +105,9 @@ const Contact = () => {
               </form>
             </CardContent>
             <CardFooter className="flex justify-between">
-              <Button onClick={handleSubmit}>{loading? "Sending":"Send"}</Button>
+              <Button onClick={handleSubmit}>
+                {loading ? "Sending" : "Send"}
+              </Button>
             </CardFooter>
           </Card>
         </div>
