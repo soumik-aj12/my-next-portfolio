@@ -51,7 +51,7 @@ export const ProjectsList = [
     technology: [ReactjsSvg, TailwindSvg, NodejsSvg, ExpressSvg, MongoDBSvg],
     image: helpify,
 
-    github: "https://github.com/soumik-aj12/Daily-Expense-Tracker",
+    github: "https://github.com/soumik-aj12/helpify",
   },
   {
     title: "my portfolio",
