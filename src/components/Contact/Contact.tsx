@@ -33,7 +33,11 @@ const Contact = () => {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     try {
-      setLoading(true);
+      if(formData.name === "" ||  formData.email === "" || formData.message === "") {
+        toast({description: "Please enter all the fields!"})
+        
+      }else{
+        setLoading(true);
       const res = await fetch("/api/mail", {
         method: "POST",
         headers: {
@@ -50,6 +54,8 @@ const Contact = () => {
         setLoading(false);
         toast({ description: "Failed to send feedback" });
       }
+      }
+
     } catch (e) {
       console.log(e);
     } finally {

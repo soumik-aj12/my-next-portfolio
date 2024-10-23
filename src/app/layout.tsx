@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Handjet, Pixelify_Sans } from "next/font/google";
+import { Pixelify_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -19,6 +19,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+      <link
+          rel="icon"
+          type="image/svg+xml"
+          href="./logo.png"
+        />
+      </head>
       <body className={pixel.className}>
         <ThemeProvider
           attribute="class"
